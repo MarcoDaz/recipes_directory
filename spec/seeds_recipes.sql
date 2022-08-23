@@ -9,4 +9,4 @@ INSERT INTO recipes
 
 INSERT INTO recipes
   (name, cooking_time, rating)
-  VALUES ('Spagetti Carbonara', 30, 3);
+  VALUES ('Spaghetti Carbonara', 30, 3);
