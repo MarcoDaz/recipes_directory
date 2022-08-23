@@ -1,16 +1,24 @@
-# { TABLE NAME } Model and Repository Classes Design Recipe
+<!--
+1. Design and create the table if needed.
+2. Create test SQL seeds.
+3. Define the Model and Repository class names.
+4. Implement the Model class.
+5. Design the Repository class interface.
+6. Write test examples.
+7. Test-driven and implement the Repository class behaviour.
+-->
+
+# Recipes Model and Repository Classes Design Recipe
 
 ## 1 .Design and create the Table
 
 If the table is already created in the database, you can skip this step.
 
 ```
-# Example
-
-Table: students
+Table: recipes
 
 Columns:
-id | name | cohort_name
+id | name | cooking_time | rating
 ```
 
 ## 2. Create Test SQL Seeds
@@ -28,18 +36,18 @@ If seed data is provided (or you already created it), you can skip this step.
 -- First, you'd need to truncate the table - this is so our table is emptied between each test run so we ca start with a fresh state.
 -- (RESTART IDENTITY resets the primary key)
 
-TRUNCATE TABLE students RESTART IDENTITY; -- replace with your own table name.
+TRUNCATE TABLE recipes RESTART IDENTITY; -- replace with your own table name.
 
 -- Below this line there should only be `INSERT` statements.
 -- Replace these statements with your own seed data.
 
-INSERT INTO students
-  (name, cohort_name)
-  VALUES ('David', 'April 2022');
+INSERT INTO recipes
+  (name, cooking_time, rating)
+  VALUES ('Lasagna', 45, 4);
 
-INSERT INTO students
-  (name, cohort_name)
-  VALUES ('Anna', 'Mayy 2022');
+INSERT INTO recipes
+  (name, cooking_time, rating)
+  VALUES ('Spagetti Carbonara', 30, 3);
 ```
 Run this SQL file on the database to truncate (empty) the table, and insert the seed data. Be mindful of the fact any existing records in the table will be deleted.
 
